@@ -1,0 +1,12 @@
+#qr-content {
+  border: 1px solid #CCC;
+  background-color: #fafafa;
+  
+}
+ 
+.qr-code { float: left; width:100%; margin: 5px !important; text-align:center;}
+.qr-data { float: left; width:100%; background-color: #EaEaEa; font-size:11px;}
+
+.qr-data p { margin: 5px 10px 0 !important}
+
+div.clear  { clear: both; }
