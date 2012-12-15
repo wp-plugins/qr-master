@@ -22,11 +22,12 @@ This plugin support two methods to getting QR:
 The shortcode form tool, include all parameters of Google API Charts.
 
 Available Languages
+
 * English
 * Català
 * Español
 
-TO-DO
+= TO-DO =
 
 * Implement PHP QR Code, widget, save codes to disk, customize css
 
