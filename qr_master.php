@@ -4,7 +4,7 @@ Plugin Name: QR Master
 Description: Generation shortcodes to include QR codes from google API Charts
 Author: Roger Pàmies
 Author URI: http://studi7.com/
-Version: 1.0
+Version: 1.0.1
 License: GPLv2 or later
 Plugin URI: http://studi7.com/
 */
