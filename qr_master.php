@@ -75,7 +75,14 @@ function get_qrcode($atts)
 	extract(shortcode_atts(array('err' => 'L'), $atts));
 	extract(shortcode_atts(array('mode' => 'static'), $atts)); //set static by default if not specify mode auto
 	extract(shortcode_atts(array('src' => 'google'), $atts)); //set google api by default
-	include('get_qrcode.php');
+
+	ob_start();
+     	include('get_qrcode.php');
+     	$output = ob_get_clean();
+	//print $output; // debug
+	return $output;	
+
+	
 }
 
 function load_plugin_languages()
