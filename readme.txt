@@ -21,6 +21,15 @@ This plugin support two methods to getting QR:
 
 The shortcode form tool, include all parameters of Google API Charts.
 
+Available Languages
+* English
+* Català
+* Español
+
+TO-DO
+
+* Implement PHP QR Code, widget, save codes to disk, customize css
+
 == Installation ==
 
 1. Upload 'qrmaster' forler to the '/wp-content/plugins/' directory
@@ -35,18 +44,9 @@ The shortcode form tool, include all parameters of Google API Charts.
 Yes, change the image of QR code canvas, but not change the QR code size.
 Limitations of Google API Charts.
 
-== Available Languages ==
-* English
-* Català
-* Español
-
 == Screenshots ==
 
 1. Generation shortcode tool qrmaster-admin.png
-
-== TO-DO ==
-
-* Implement PHP QR Code, widget, save codes to disk, customize css
 
 == Changelog ==
 
