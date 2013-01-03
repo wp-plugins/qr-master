@@ -19,12 +19,13 @@ QR Master generate shortcodes to include QR code in page or post. Get QR codes f
 
 The shortcode form tool, include all parameters of Google API Charts, css options and hide code information and credits.
 
-Available Languages
+= Available Languages =
+
 * English
 * Català
 * Español
 
-TO-DO
+= TO-DO =
 
 * Implement PHP QR Code, widget, save codes to disk, customize css
 
