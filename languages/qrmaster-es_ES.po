@@ -1,0 +1,207 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Roger Pàmies <roger.pamies@gmail.com>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in echo
+#: qr_master_admin.php:86
+msgid "CSS Style"
+msgstr "Estilo CSS"
+
+#. Text in echo
+#: qr_master_admin.php:87
+msgid "Classic"
+msgstr "Clasico"
+
+#. Text in echo
+#: qr_master_admin.php:81
+msgid "Code information"
+msgstr "Información del código"
+
+#. Text in echo
+#: qr_master_admin.php:88
+msgid "None"
+msgstr "Sin estilo"
+
+#. Text in echo
+#: qr_master_admin.php:89
+msgid "Set css style to code QR."
+msgstr "Añade el estilo CSS al código QR"
+
+#. Text in echo
+#: qr_master_admin.php:82
+msgid "Show"
+msgstr "Visible"
+
+#. Text in echo
+#: qr_master_admin.php:83
+msgid "Show/hide information below QR code."
+msgstr "Ver/Ocultar la información debajo del código."
+
+#. Text in echo
+#: qr_master_admin.php:69
+msgid "(Deprecated)"
+msgstr "(Obsoleto)"
+
+#. Text in echo
+#: qr_master_admin.php:63
+msgid "Automatic mode"
+msgstr "Modo automático"
+
+#. Text in echo
+#: qr_master_admin.php:40
+msgid "Codification:"
+msgstr "Codificación:"
+
+#. Text in echo
+#: qr_master_admin.php:72
+msgid "Copy the shortcode and paste to page or post"
+msgstr "Copia el shortcode y pegalo a un página o un post"
+
+#. Text in echo
+#: qr_master_admin.php:48
+msgid "Error correction Level:"
+msgstr "Nivel de corrección de error:"
+
+#. Text in echo
+#: qr_master_admin.php:75
+msgid "GNU General Public License, version 2"
+msgstr "GNU General Public License, version 2"
+
+#. Text in echo
+#: qr_master_admin.php:64
+msgid "Generate a random value of 23 characters based on current time in microseconds. Get random QR code each time to refresh page or post."
+msgstr "Genera un valor aleatorio de 23 caracteres basado en el tiempo actual en microsegundos. Obtiene un código QR aleatorio cada vez que se actualiza la pàgina o el post."
+
+#. Text in echo
+#: qr_master_admin.php:67
+msgid "Get shortcode"
+msgstr "Obtener shortcode"
+
+#. Text in echo
+#: qr_master_admin.php:26
+msgid "Google API Charts QR Shortcode"
+msgstr "Google API Charts QR Shortcode"
+
+#. Text in echo
+#: qr_master_admin.php:69
+msgid "Google Chart Tools"
+msgstr "Google Chart Tools"
+
+#. Text in echo
+#: qr_master_admin.php:53
+msgid "H (30% data loss)"
+msgstr "H (30% pérdida)"
+
+#. Text in echo
+#: qr_master_admin.php:35
+msgid "Heigth image:"
+msgstr "Altura imagen:"
+
+#. Text in echo
+#: qr_master_admin.php:44
+msgid "ISO-9985-1"
+msgstr "ISO-9985-1"
+
+#. Text in echo
+#: qr_master_admin.php:76
+msgid "If you like this plugin, you can make a donation :) "
+msgstr "Si te ha gustado la extensión, puedes hacer una donación :) "
+
+#. Text in echo
+#: qr_master_admin.php:50
+msgid "L (7% data loss)"
+msgstr "L (7% pérdida)"
+
+#. Text in echo
+#: qr_master_admin.php:54
+msgid "L by default"
+msgstr "L por defecto"
+
+#. Text in echo
+#: qr_master_admin.php:75
+msgid "Licensed with "
+msgstr "Licenciado con "
+
+#. Text in echo
+#: qr_master_admin.php:51
+msgid "M (15% data loss)"
+msgstr "M (15% pérdida)"
+
+#. Text in echo
+#: qr_master_admin.php:60
+msgid "Only set if automatic mode is not checked. Max 40 characters."
+msgstr "Llenar si el modo automático no está activado. Máximo 40 caracteres."
+
+#. Text in echo
+#: qr_master_admin.php:74
+msgid "Plugin created by "
+msgstr "Extensión creada por "
+
+#. Text in echo
+#: qr_master_admin.php:52
+msgid "Q (25% data loss)"
+msgstr "Q (25% pérdida)"
+
+#. Text in echo
+#: qr_master_admin.php:68
+msgid "Reset"
+msgstr "Reinicializar"
+
+#. Text in echo
+#: qr_master_admin.php:43
+msgid "Shift_JIS"
+msgstr "Shift_JIS"
+
+#. Text in echo
+#: qr_master_admin.php:42
+msgid "UTF-8"
+msgstr "UTF-8"
+
+#. Text in echo
+#: qr_master_admin.php:45
+msgid "UTF-8 by default"
+msgstr "UTF-8 por defecto"
+
+#. Text in echo
+#: qr_master_admin.php:58
+msgid "Value:"
+msgstr "Valor:"
+
+#. Text in echo
+#: qr_master_admin.php:29
+msgid "Width image:"
+msgstr "Ancho imagen:"
+
+#. Text in echo
+#: qr_master_admin.php:37
+msgid "width x height can not up to 300000 pixels"
+msgstr "ancho x alto no puede superar los 300000 pixeles"
+
+#. Text in echo
+#: qr_shortcode_view.php:1
+msgid "<label class=\"error\">Width, Height and Value fields are required.</label>"
+msgstr "<label class=\"error\">Los campos Ancho, Altura y Valor son obligatorios.</label>"
+
+#. Text in echo
+#: get_qrcode.php:1
+msgid "Encoding:"
+msgstr "Codificación:"
+
+#. Text in echo
+#: get_qrcode.php:1
+msgid "Link"
+msgstr "Enlace"
+
+#. Text in echo
+#: get_qrcode.php:1
+msgid "Size: "
+msgstr "Tamaño: "
+
