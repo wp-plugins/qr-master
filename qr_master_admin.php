@@ -13,8 +13,18 @@
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
-?>
+*/?>
+
+	
+	<!--<h2 class="nav-tab-wrapper">
+	<a href="?page=qr_master&tab=tab1" class="nav-tab">PHP QR Code</a>
+	<a href="#" class="nav-tab nav-tab-active">Google API Charts</a>
+	<a href="#" class="nav-tab">Tab #2</a>
+	</h2>-->
+
+
+
+
 
 <?php 
  echo '<link type="text/css" rel="stylesheet" href="' . path_join(WP_PLUGIN_URL, basename( dirname( __FILE__ ) )) . '/css/admin.css" />';
@@ -25,18 +35,13 @@
 
 <h2><?php _e( 'Google API Charts QR Shortcode','qrmaster'); ?></h2><br />
 
-<div class="row-col col-1">
+<div class="col-1">
+<div class="row-col">
 <label><b><?php _e('Width image:','qrmaster');?></b></label><br />
 <input type="text" class="width" id="width" value="150" maxlength="4" onkeypress="return isNumberKey(event)"/><br />
 <label class="note"><?php _e('width x height can not up to 300000 pixels','qrmaster');?></label>
 </div>
-
-<div class="row-col col-2">
-<label><b><?php _e('Heigth image:','qrmaster');?></b></label><br />
-<input type="text" class="height" id="height" value="150" maxlength="4" onkeypress="return isNumberKey(event)"/><br />
-<label class="note"><?php _e('width x height can not up to 300000 pixels','qrmaster');?></label>
-</div>
-<div class="row-col col-1">
+<div class="row-col">
 <label><b><?php _e('Codification:','qrmaster');?></b></label><br />            
 <select class="enc" id="enc">
 	<option value="UTF-8"><?php _e('UTF-8','qrmaster');?></option>
@@ -44,7 +49,20 @@
 	<option value="ISO-9985-1"><?php _e('ISO-9985-1','qrmaster');?></option>
 </select><br /><label class="note"><?php _e('UTF-8 by default','qrmaster');?></label>
 </div>
-<div class="row-col col-2">
+<div class="row-col">
+<label><b><?php _e('Value:','qrmaster');?></b></label><br />
+<input type="text" class="value" id="value" disabled="true" maxlength="40"/><br />
+<label class="note"><?php _e('Only set if automatic mode is not checked. Max 40 characters.','qrmaster');?></label>
+</div>
+</div>
+
+<div class="col-1">
+<div class="row-col">
+<label><b><?php _e('Heigth image:','qrmaster');?></b></label><br />
+<input type="text" class="height" id="height" value="150" maxlength="4" onkeypress="return isNumberKey(event)"/><br />
+<label class="note"><?php _e('width x height can not up to 300000 pixels','qrmaster');?></label>
+</div>
+<div class="row-col">
 <label><b><?php _e('Error correction Level:','qrmaster');?></b></label><br />          
 <select class="err" id="err">
 	<option value="L"><?php _e('L (7% data loss)','qrmaster');?></option>
@@ -53,34 +71,38 @@
 	<option value="H"><?php _e('H (30% data loss)','qrmaster');?></option>
 </select><br /><label class="note"><?php _e('L by default','qrmaster');?></label>
 </div>
-
-<div class="row-col col-1">
-<label><b><?php _e('Value:','qrmaster');?></b></label><br />
-<input type="text" class="value" id="value" disabled="true" maxlength="40"/><br />
-<label class="note"><?php _e('Only set if automatic mode is not checked. Max 40 characters.','qrmaster');?></label>
-</div>
-<div class="row-col col-2">
+<div class="row-col">
 <input type="checkbox" class="auto" id="auto" value="1" checked onclick="javascript:Auto()"> <b><?php _e('Automatic mode','qrmaster');?></b><br />
 <label class="note"><?php _e('Generate a random value of 23 characters based on current time in microseconds. Get random QR code each time to refresh page or post.','qrmaster');?></label>
 </div>
+</div>
+<div class="col-3">
+<div class="row-col">
+<label><b><?php _e('Code information','qrmaster');?></b></label><br />
+<input type="checkbox" class="info" id="info" checked/><?php _e('Show','qrmaster');?><br />
+<label class="note"><?php _e('Show/hide information below QR code.','qrmaster');?></label>
+</div>
+<div class="row-col">
+<label><b><?php _e('CSS Style','qrmaster');?></b></label><br />
+<input type="radio" class="css" id="css" name="css" value="classic" checked/><?php _e('Classic','qrmaster');?><br />
+<input type="radio" class="css" id="css" name="css" value="none"/><?php _e('None','qrmaster');?><br />
+<label class="note"><?php _e('Set css style to code QR.','qrmaster');?></label>
+</div>
+</div>
+
+
 <div class="row-2col">
-<a class="get" href="<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php"><?php _e('Get shortcode','qrmaster'); ?></a>
-| <a class="clear" href="javascript:Reset()"><?php _e('Reset','qrmaster'); ?></a>
-| <a target="_blank" href="https://developers.google.com/chart/infographics/docs/qr_codes?hl=ca"><?php _e('Google Chart Tools','qrmaster'); ?></a> &nbsp;<i><?php _e('(Deprecated)');?></i>
+<a class="button-primary get" href="<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php"><?php _e('Get shortcode','qrmaster'); ?></a>
+<a class="button-secondary clear" href="javascript:Reset()"><?php _e('Reset','qrmaster'); ?></a>
+<a target="_blank" href="https://developers.google.com/chart/infographics/docs/qr_codes?hl=ca"><?php _e('Google Chart Tools','qrmaster'); ?></a> &nbsp;<i><?php _e('(Deprecated)');?></i>
 </div>
 <div class="shortcode row-2col" id="shortcode"></div>
-<label class="note"><i><?php _e('Copy the shortcode and paste to page or post','qrmaster'); ?></i></label><br /><br /><br />
+<div class="row-2col"><label class="note"><i><?php _e('Copy the shortcode and paste to page or post','qrmaster'); ?></i></label></div><br /><br /><br />
 <div class="row-2col credits">
 <label><?php _e('Plugin created by ','qrmaster');?><a href="http://studi7.com" target="_blank">Studi7</a></label><br />
 <label><?php _e('Licensed with ','qrmaster');?><a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html" target="_blank"><?php _e('GNU General Public License, version 2','qrmaster');?></a></label><br />
-<label><?php _e('If you like this plugin, you can make a donation :) ','qrmaster');?></label><br />
-<!--paypal donation-->
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="F4VJKZW7THJ22">
-<input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal. La forma rápida y segura de pagar en Internet.">
-<img alt="" border="0" src="https://www.paypalobjects.com/es_ES/i/scr/pixel.gif" width="1" height="1">
-</form>
+<label><?php _e('If you like this plugin, you can make a donation :) ','qrmaster');?>&nbsp;<a href="https://www.paypal.com/es/cgi-bin/webscr?cmd=_flow&SESSION=N3FBPCkFbss4IquTxeNOxg4Psp_bwV3CUOaj9DCN4PyisiYw8y8kj-GWziS&dispatch=5885d80a13c0db1f8e263663d3faee8d0b7e678a25d883d0fa72c947f193f8fd">PayPal</a></label><br />
+
 
 </div>
 <script>

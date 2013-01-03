@@ -1,13 +1,49 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: Roger Pàmies <roger.pamies@gmail.com>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in echo
+#: qr_master_admin.php:86
+msgid "CSS Style"
+msgstr "Estil CSS"
+
+#. Text in echo
+#: qr_master_admin.php:87
+msgid "Classic"
+msgstr "Clàssic"
+
+#. Text in echo
+#: qr_master_admin.php:81
+msgid "Code information"
+msgstr "Informació del codi:"
+
+#. Text in echo
+#: qr_master_admin.php:88
+msgid "None"
+msgstr "Sense estil"
+
+#. Text in echo
+#: qr_master_admin.php:89
+msgid "Set css style to code QR."
+msgstr "Assigna l'estil CSS al codi QR"
+
+#. Text in echo
+#: qr_master_admin.php:82
+msgid "Show"
+msgstr "Mostrar"
+
+#. Text in echo
+#: qr_master_admin.php:83
+msgid "Show/hide information below QR code."
+msgstr "Mostra/Amaga la informació del codi QR"
 
 #. Text in echo
 #: qr_master_admin.php:69

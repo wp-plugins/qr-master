@@ -19,6 +19,7 @@ jQuery(document).ready( function($) {
     
     /* only fetch results once */
     /*$(this).unbind('click').bind('click', function(){return false;});*/
+    //alert($('input[name=css]:checked').val());	
     
     $.post($(this).attr("href"), {
         action: "qr_master_gen",
@@ -28,7 +29,9 @@ jQuery(document).ready( function($) {
 	heightQR: document.getElementById("height").value,
 	encQR: document.getElementById("enc").value,
 	autoQR: document.getElementById("auto").checked,
-	errQR: document.getElementById("err").value	
+	errQR: document.getElementById("err").value,
+	infoQR: document.getElementById("info").checked,
+	cssQR: $('input[name=css]:checked').val()
       }, function(data) {
         var container = document.getElementById("shortcode");
 	container.innerHTML = data;

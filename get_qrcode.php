@@ -15,7 +15,7 @@
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
- echo '<link type="text/css" rel="stylesheet" href="' . path_join(WP_PLUGIN_URL, basename( dirname( __FILE__ ) )) . '/css/shortcode.css" />';
+if($css == "classic") echo '<link type="text/css" rel="stylesheet" href="' . path_join(WP_PLUGIN_URL, basename( dirname( __FILE__ ) )) . '/css/shortcode.css" />';
 
 
 if($src == "google") {
@@ -25,15 +25,16 @@ if($src == "google") {
 	//get url google qr
 	$url = 'http://chart.apis.google.com/chart?cht=qr&chs='.$width.'x'.$height.'&chl='.$data.'&chld='.$err.'&choe='.$enc.'|0';
 	//print qr	
-	echo '<div id="qr-content">';
-	echo '<span class="qr-code"><img src="'.$url.'"/></span>';
-	echo '<span class="qr-data"><p>[<a href="http://studi7.com" target="_blank">QRMaster</a>]&nbsp;<b>';
-	_e('Size: ','qrmaster');
-	echo '</b> '.$width.'x'.$height.' | <b>';
-	_e('Encoding:','qrmaster');
-	echo '</b> '.$enc.' | <b>Error:</b> '.$err.' | <a href="'.$url.'">';
-	_e('Link','qrmaster');
-	echo '</a></p></span><div class="clear"></div></div></br>';
+	if ($css == "none") echo '<div id="qr-content-"'.$css.'>'; else echo '<div id="qr-content">';
+	if ($css == "none") echo  '<span class="qr-code-"'.$css.'>'; else echo '<span class="qr-code">'; echo '<img src="'.$url.'"/></span>';
+	if($info == "yes") {	
+		echo '<span class="qr-data"><b>';
+		_e('Encoding:','qrmaster');
+		echo '</b> '.$enc.' | <b>Error:</b> '.$err.' | <a href="'.$url.'">';
+		_e('Link','qrmaster');
+		echo '</a></p></span>';
+	}
+	echo '<div class="clear"></div></div></br>';
 }
 
 

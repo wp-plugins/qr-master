@@ -1,39 +1,49 @@
 .wrap {
-  width:680px;
+  width:880px;
 }
 
 .row-col {
 background-color:#fafafa;
 height:auto;
-width:46%;
+width:inherit;
 padding:5px;
-min-height:75px;
+min-height:85px;
+float:left;
+border:1px dotted #aaa;
+margin:0px 0px 10px 10px;
 }
 
 .row-2col {
 height:auto;
-width:650px;
-padding:5px;
+width:100%;
 float:left;
+margin:0px 10px 10px 10px;
 }
 
 .credits {
 background-color:#cceeff;
 padding: 15px 5px 15px 5px;
-margin:0px 10px 10px 10px;
 border: 1px solid #bbddff;
 }
 
 .col-1 {
 float:left;
-border:1px dotted #aaa;
-margin:0px 0px 10px 10px;
+width:225px;
+margin-right:25px;
+
 }
  
 .col-2 {
-float:right;
+float:left;
 border:1px dotted #aaa;
-margin:0px 10px 10px 0px;
+margin:0px 0px 10px 10px;
+}
+
+.col-3 {
+float:left;
+/*border:1px dotted #aaa;*/
+width:360px !important;
+/*margin:0px 10px 10px 0px;*/
 }
 
 #shortcode {

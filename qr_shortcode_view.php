@@ -22,8 +22,13 @@ else {
 	$size = $heightQR * $widthQR;
 	if($size > 300000 || $size == 0) _e('<label class="error">'.$widthQR.'x'.$heightQR.'='.$size.' is up to 300000 pixels allow or not a valid value.</label>','qrmaster');
 	else {
-		if($auto_mode) echo '[qrcode src="'.$srcQR.'" mode="auto" width="'.$widthQR.'" height="'.$heightQR.'" enc="'.$encQR.'" err="'.$errQR.']';
-		else echo '[qrcode src="'.$srcQR.'" data="'.$valueQR.'" width="'.$widthQR.'" height="'.$heightQR.'" enc="'.$encQR.'" err="'.$errQR.']';
+		$code;
+		if($auto_mode) $code = '[qrcode src="'.$srcQR.'" mode="auto" width="'.$widthQR.'" height="'.$heightQR.'" enc="'.$encQR.'" err="'.$errQR.'"';
+		else $code = '[qrcode src="'.$srcQR.'" data="'.$valueQR.'" width="'.$widthQR.'" height="'.$heightQR.'" enc="'.$encQR.'" err="'.$errQR.'"';
+		if($infoQR == 'false') $code = $code.' info="no"';
+		if($cssQR != 'classic') $code = $code.' css="'.$cssQR.'"';
+		$code = $code.']';
+		echo $code;
 	}
 }
 ?>

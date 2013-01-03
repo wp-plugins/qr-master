@@ -4,7 +4,7 @@ Plugin Name: QR Master
 Description: Generation shortcodes to include QR codes from google API Charts
 Author: Roger Pàmies
 Author URI: http://studi7.com/
-Version: 1.0.1
+Version: 1.0
 License: GPLv2 or later
 Plugin URI: http://studi7.com/
 */
@@ -45,6 +45,8 @@ function qr_master_gen(  ) {
   $encQR = isset($_POST['encQR'])?$_POST['encQR']:null;
   $autoQR = isset($_POST['autoQR'])?$_POST['autoQR']:null;
   $errQR = isset($_POST['errQR'])?$_POST['errQR']:null;
+  $infoQR = isset($_POST['infoQR'])?$_POST['infoQR']:null;
+  $cssQR = isset($_POST['cssQR'])?$_POST['cssQR']:null;
   //if ( $valueQR ) {
     //$src = $srcQR;
     //$value = $valueQR;
@@ -75,6 +77,8 @@ function get_qrcode($atts)
 	extract(shortcode_atts(array('err' => 'L'), $atts));
 	extract(shortcode_atts(array('mode' => 'static'), $atts)); //set static by default if not specify mode auto
 	extract(shortcode_atts(array('src' => 'google'), $atts)); //set google api by default
+	extract(shortcode_atts(array('info' => 'yes'), $atts));
+	extract(shortcode_atts(array('css' => 'classic'), $atts));  
 
 	ob_start();
      	include('get_qrcode.php');
