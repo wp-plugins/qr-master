@@ -1,12 +1,19 @@
-#qr-content {
-  border: 1px solid #CCC;
-  background-color: #fafafa;
-  
+.qr-code img {
+    border: 1px solid #FFFFFF;
+    margin: 0;
+    background: #F6F6F6;
+    padding: 8px;
+    -moz-box-shadow: 2px 2px 5px #CCCCCC;
+    -webkit-box-shadow: 2px 2px 5px #CCCCCC;
 }
  
-.qr-code { float: left; width:100%; margin: 5px !important; text-align:center;}
-.qr-data { float: left; width:100%; background-color: #EaEaEa; font-size:11px;}
+.qr-code { 
+    display: inline-block;
+    margin: 8px;
+    text-align:center;}
 
-.qr-data p { margin: 5px 10px 0 !important}
 
-div.clear  { clear: both; }
+
+.qr-data { text-align:center; width:100%; font-size:11px; margin: 4px; display:block; }
+
+/*div.clear  { clear: both; }*/

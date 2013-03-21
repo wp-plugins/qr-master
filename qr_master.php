@@ -4,12 +4,12 @@ Plugin Name: QR Master
 Description: Generation shortcodes to include QR codes from google API Charts
 Author: Roger Pàmies
 Author URI: http://studi7.com/
-Version: 1.0.2
+Version: 1.0.3
 License: GPLv2 or later
-Plugin URI: http://studi7.com/
+Plugin URI: http://studi7.com/codi/plugin-wordpress-qr-master/
 */
 
-/*  Copyright YEAR  PLUGIN_AUTHOR_NAME  (email : info@studi7.com)
+/*  Copyright 2012  Roger Pàmies  (email : info@studi7.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -39,6 +39,7 @@ function qr_master_admin(  ) {
 
 function qr_master_gen(  ) {
   $srcQR = isset($_POST['srcQR'])?$_POST['srcQR']:null;
+if ($srcQR == 'google') {
   $valueQR = isset($_POST['valueQR'])?$_POST['valueQR']:null;
   $widthQR = isset($_POST['widthQR'])?$_POST['widthQR']:null;
   $heightQR = isset($_POST['heightQR'])?$_POST['heightQR']:null;
@@ -47,18 +48,17 @@ function qr_master_gen(  ) {
   $errQR = isset($_POST['errQR'])?$_POST['errQR']:null;
   $infoQR = isset($_POST['infoQR'])?$_POST['infoQR']:null;
   $cssQR = isset($_POST['cssQR'])?$_POST['cssQR']:null;
-  //if ( $valueQR ) {
-    //$src = $srcQR;
-    //$value = $valueQR;
-    //$width = $widthQR;
-    //$height = $heightQR;
-    //$enc = $encQR;
-    //$auto = $autoQR;
-    //$err = $errQR;
-	
-    //$posts = get_posts( "numberposts=-1&post_status=publish,pending,future,private,draft&category=$catID" );
-    include_once('qr_shortcode_view.php');
-  //}
+} else { //phpqrcode
+  $valueQR = isset($_POST['valueQR'])?$_POST['valueQR']:null;
+  $sizeQR = isset($_POST['sizeQR'])?$_POST['sizeQR']:null;
+  $autoQR = isset($_POST['autoQR'])?$_POST['autoQR']:null;
+  $errQR = isset($_POST['errQR'])?$_POST['errQR']:null;
+  $infoQR = isset($_POST['infoQR'])?$_POST['infoQR']:null;
+  $cssQR = isset($_POST['cssQR'])?$_POST['cssQR']:null;
+}
+  
+
+  include_once('qr_shortcode_view.php');
   exit();
 }
 
@@ -78,7 +78,8 @@ function get_qrcode($atts)
 	extract(shortcode_atts(array('mode' => 'static'), $atts)); //set static by default if not specify mode auto
 	extract(shortcode_atts(array('src' => 'google'), $atts)); //set google api by default
 	extract(shortcode_atts(array('info' => 'yes'), $atts));
-	extract(shortcode_atts(array('css' => 'classic'), $atts));  
+	extract(shortcode_atts(array('css' => 'classic'), $atts));
+	extract(shortcode_atts(array('size' => '4'), $atts));  
 
 	ob_start();
      	include('get_qrcode.php');

@@ -17,18 +17,34 @@
 
 $auto_mode = $autoQR === 'true'? true: false;
 
-if(($valueQR == null && !$auto_mode) || $widthQR == null || $heightQR == null) _e('<label class="error">Width, Height and Value fields are required.</label>','qrmaster');
-else {
-	$size = $heightQR * $widthQR;
-	if($size > 300000 || $size == 0) _e('<label class="error">'.$widthQR.'x'.$heightQR.'='.$size.' is up to 300000 pixels allow or not a valid value.</label>','qrmaster');
+if ($srcQR == 'google') {
+
+	if(($valueQR == null && !$auto_mode) || $widthQR == null || $heightQR == null) _e('<label class="error">Width, Height and Value fields are required.</label>','qrmaster');
 	else {
+		$size = $heightQR * $widthQR;
+		if($size > 300000 || $size == 0) _e('<label class="error">'.$widthQR.'x'.$heightQR.'='.$size.' is up to 300000 pixels allow or not a valid value.</label>','qrmaster');
+		else {
+			$code;
+			if($auto_mode) $code = '[qrcode src="'.$srcQR.'" mode="auto" width="'.$widthQR.'" height="'.$heightQR.'" enc="'.$encQR.'" err="'.$errQR.'"';
+			else $code = '[qrcode src="'.$srcQR.'" data="'.$valueQR.'" width="'.$widthQR.'" height="'.$heightQR.'" enc="'.$encQR.'" err="'.$errQR.'"';
+			if($infoQR == 'false') $code = $code.' info="no"';
+			if($cssQR != 'classic') $code = $code.' css="'.$cssQR.'"';
+			$code = $code.']';
+			echo $code;
+		}
+	}
+} else {
+	if($valueQR == null && !$auto_mode) _e('<label class="error">Value field are required.</label>','qrmaster');
+	else {
+		
 		$code;
-		if($auto_mode) $code = '[qrcode src="'.$srcQR.'" mode="auto" width="'.$widthQR.'" height="'.$heightQR.'" enc="'.$encQR.'" err="'.$errQR.'"';
-		else $code = '[qrcode src="'.$srcQR.'" data="'.$valueQR.'" width="'.$widthQR.'" height="'.$heightQR.'" enc="'.$encQR.'" err="'.$errQR.'"';
+		if($auto_mode) $code = '[qrcode src="'.$srcQR.'" mode="auto" size="'.$sizeQR.'" err="'.$errQR.'"';
+		else $code = '[qrcode src="'.$srcQR.'" data="'.$valueQR.'" size="'.$sizeQR.'" err="'.$errQR.'"';
 		if($infoQR == 'false') $code = $code.' info="no"';
 		if($cssQR != 'classic') $code = $code.' css="'.$cssQR.'"';
 		$code = $code.']';
 		echo $code;
+		
 	}
 }
 ?>

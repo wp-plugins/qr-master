@@ -41,6 +41,28 @@ jQuery(document).ready( function($) {
     return false;
   });
 
+   $("form.phpqrgen a.get").click( function() {
+    
+    /* only fetch results once */
+    /*$(this).unbind('click').bind('click', function(){return false;});*/
+    //alert($('input[name=css]:checked').val());
+    
+    $.post($(this).attr("href"), {
+        action: "qr_master_gen",
+        srcQR: "phpqrcode",
+	valueQR: document.getElementById("phpvalue").value,
+	sizeQR: document.getElementById("phpsize").value,
+	autoQR: document.getElementById("phpauto").checked,
+	errQR: document.getElementById("phperr").value,
+	infoQR: document.getElementById("phpinfo").checked,
+	cssQR: $('input[name=phpcss]:checked').val()
+      }, function(data) {
+        var container = document.getElementById("phpshortcode");
+	container.innerHTML = data;
 
+      }
+    );
+    return false;
+  });
 
 });
