@@ -99,7 +99,7 @@ msgstr "Automatic mode"
 #. Text in echo
 #: qr_master_admin.php:223
 msgid "CSS Style"
-msgstr "(Deprecated)"
+msgstr "CSS Style"
 
 #. Text in echo
 #: qr_master_admin.php:106
