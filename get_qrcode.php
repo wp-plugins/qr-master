@@ -114,8 +114,18 @@ if($src == "google") {
 
 	//echo $err.$size;
 
+	
+
+	$backColor = hexdec(str_replace('#', '0x', $bg));
+	$foreColor = hexdec(str_replace('#', '0x', $fg));
+
+	//var_dump(hexdec('0xFF00FF'));
+
 	$num_files = count(glob($cache_upload_dir .'*.png'));
-	QRcode::png($data, $cache_upload_dir .'qrmcode-'.$num_files.'.png', $err, $size, 2);
+	QRcode::png($data, $cache_upload_dir .'qrmcode-'.$num_files.'.png', $err, $size, 2, false, $backColor, $foreColor);
+	//QRcode::png($data, $cache_upload_dir .'qrmcode-'.$num_files.'.png', $err, $size, 2);
+
+	//QRcode::svg($data, $cache_upload_dir .'qrmcode-'.$num_files.'.svg', "L", 4, 4, false, $backColor, $foreColor);
 
 	//get url php qr
 	$url = $cache_upload_url .'qrmcode-'.$num_files.'.png';

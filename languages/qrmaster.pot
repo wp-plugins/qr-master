@@ -362,3 +362,15 @@ msgstr ""
 #: qr_shortcode_view.php:1
 msgid "<label class=\"error\">Width, Height and Value fields are required.</label>"
 msgstr "<label class=\"error\">Width, Height and Value fields are required.</label>"
+
+msgid "Foreground color"
+msgstr ""
+
+msgid "Foreground color of QR code."
+msgstr ""
+
+msgid "Background color"
+msgstr ""
+
+msgid "Background color of QR code."
+msgstr ""

@@ -1,10 +1,11 @@
 .qr-code img {
     border: 1px solid #FFFFFF;
     margin: 0;
-    background: #F6F6F6;
+    background: #a6a6a6;
     padding: 8px;
     -moz-box-shadow: 2px 2px 5px #CCCCCC;
     -webkit-box-shadow: 2px 2px 5px #CCCCCC;
+    border-radius:12px;
 }
  
 .qr-code { 

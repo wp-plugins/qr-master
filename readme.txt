@@ -2,13 +2,13 @@
 Contributors: studi7
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=F4VJKZW7THJ22
 Tags: mobile, qr code, shortcode, qr
-Requires at least: 3.0.1
+Requires at least: 3.5.1
 Tested up to: 3.5.1
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Generate shortcodes to include QR code in page or post.
+Generate shortcodes to include colored QR code in page or post.
 
 == Description ==
 
@@ -22,6 +22,7 @@ The shortcode form tool include:
 * Form with parameters of Google API Charts,
 * Form with parameters of Php QR Code API, 
 * CSS options and hide code information and credits.
+* Foreground and background colours in QR Code (Php QR Code)
 
 All QR codes are generated in live. The Php QR Code API save some data in cache, please read FAQ.
 
@@ -33,7 +34,7 @@ All QR codes are generated in live. The Php QR Code API save some data in cache,
 
 = TO-DO =
 
-* Widget, save codes to disk, customize css, value generator, QR-Server API
+* Widget, save codes to database, insert shortcode assistant, customize css, value generator, QR-Server API
 
 == Installation ==
 
@@ -55,15 +56,19 @@ Yes, with Php QR API each QR code is saved in 'upload/qrmaster/cache'. When size
 
 == Screenshots ==
 
-1. Generation QR Shortcode Tool (Google API Charts)
+1. Generation QR Shortcode Tool (Php QR Code API)
 
-2. Generation QR Shortcode Tool (Php QR Code API)
+2. Generation QR Shortcode Tool (Google API Charts)
 
 3. Code QR usages
 
 4. Example of generated QR code
 
 == Changelog ==
+
+= 1.0.4 =
+* Colored QR codes with Php QR Code
+* New admin styled forms
 
 = 1.0.3 =
 * Php QR Code API implmented

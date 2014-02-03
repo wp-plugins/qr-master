@@ -370,6 +370,18 @@ msgstr "<label class=\"error\">Value field are required.</label>"
 msgid "<label class=\"error\">Width, Height and Value fields are required.</label>"
 msgstr "<label class=\"error\">Width, Height and Value fields are required.</label>"
 
+msgid "Foreground color"
+msgstr "Foreground color"
+
+msgid "Foreground color of QR code."
+msgstr "Foreground color of QR code."
+
+msgid "Background color"
+msgstr "Background color"
+
+msgid "Background color of QR code."
+msgstr "Background color of QR code."
+
 #~ msgid "Google API Charts QR Shortcode"
 #~ msgstr "Google API Charts QR Shortcode"
 

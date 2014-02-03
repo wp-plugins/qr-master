@@ -19,7 +19,7 @@ $auto_mode = $autoQR === 'true'? true: false;
 
 if ($srcQR == 'google') {
 
-	if(($valueQR == null && !$auto_mode) || $widthQR == null || $heightQR == null) _e('<label class="error">Width, Height and Value fields are required.</label>','qrmaster');
+	if(($valueQR == null && !$auto_mode) || $widthQR == null || $heightQR == null) _e('<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"><label>Width, Height and Value fields are required.</label></div>','qrmaster');
 	else {
 		$size = $heightQR * $widthQR;
 		if($size > 300000 || $size == 0) _e('<label class="error">'.$widthQR.'x'.$heightQR.'='.$size.' is up to 300000 pixels allow or not a valid value.</label>','qrmaster');
@@ -34,7 +34,7 @@ if ($srcQR == 'google') {
 		}
 	}
 } else {
-	if($valueQR == null && !$auto_mode) _e('<label class="error">Value field are required.</label>','qrmaster');
+	if($valueQR == null && !$auto_mode) _e('<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"><label>Value field are required.</label></label>','qrmaster');
 	else {
 		
 		$code;
@@ -42,6 +42,8 @@ if ($srcQR == 'google') {
 		else $code = '[qrcode src="'.$srcQR.'" data="'.$valueQR.'" size="'.$sizeQR.'" err="'.$errQR.'"';
 		if($infoQR == 'false') $code = $code.' info="no"';
 		if($cssQR != 'classic') $code = $code.' css="'.$cssQR.'"';
+		if($fgQR != '#000000' && $fgQR != '') $code = $code.' fg="'.$fgQR.'"';
+		if($bgQR != '#ffffff' && $bgQR != '') $code = $code.' bg="'.$bgQR.'"';
 		$code = $code.']';
 		echo $code;
 		

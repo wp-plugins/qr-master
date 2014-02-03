@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: QR Master
-Description: Generation shortcodes to include QR codes from google API Charts
+Description: Generation shortcodes to include QR codes to posts and pages
 Author: Roger Pàmies
 Author URI: http://studi7.com/
-Version: 1.0.3
+Version: 1.0.4
 License: GPLv2 or later
 Plugin URI: http://studi7.com/codi/plugin-wordpress-qr-master/
 */
@@ -55,6 +55,8 @@ if ($srcQR == 'google') {
   $errQR = isset($_POST['errQR'])?$_POST['errQR']:null;
   $infoQR = isset($_POST['infoQR'])?$_POST['infoQR']:null;
   $cssQR = isset($_POST['cssQR'])?$_POST['cssQR']:null;
+  $fgQR = isset($_POST['fgColor'])?$_POST['fgColor']:null;
+  $bgQR = isset($_POST['bgColor'])?$_POST['bgColor']:null;
 }
   
 
@@ -64,6 +66,19 @@ if ($srcQR == 'google') {
 
 function qr_master_scripts(  ) {
   wp_enqueue_script( "qrmaster", path_join(WP_PLUGIN_URL, basename( dirname( __FILE__ ) )."/qr_master.js"), array( 'jquery' ) );
+//wp_enqueue_script( "qrmaster", path_join(WP_PLUGIN_URL, basename( dirname( __FILE__ ) )."/my-script.js"), array( 'jquery' ) );
+
+  wp_enqueue_style( 'wp-jquery-ui', plugins_url( 'css/jquery-ui.css', __FILE__ ), false );
+  wp_enqueue_script( 'jquery-ui-tabs' );
+
+  wp_enqueue_style( 'wp-color-picker' );
+  wp_enqueue_script(
+            'iris',
+            admin_url( 'js/iris.min.js' ),
+            array( 'jquery-ui-draggable', 'jquery-ui-slider', 'jquery-touch-punch' ),
+            false,
+            1
+        );
 }
 
 //shortcode
@@ -79,7 +94,9 @@ function get_qrcode($atts)
 	extract(shortcode_atts(array('src' => 'google'), $atts)); //set google api by default
 	extract(shortcode_atts(array('info' => 'yes'), $atts));
 	extract(shortcode_atts(array('css' => 'classic'), $atts));
-	extract(shortcode_atts(array('size' => '4'), $atts));  
+	extract(shortcode_atts(array('size' => '4'), $atts));
+	extract(shortcode_atts(array('fg' => '#000000'), $atts));
+	extract(shortcode_atts(array('bg' => '#FFFFFF'), $atts));  
 
 	ob_start();
      	include('get_qrcode.php');
@@ -89,6 +106,13 @@ function get_qrcode($atts)
 
 	
 }
+
+/*add_action( 'admin_enqueue_scripts', 'mw_enqueue_color_picker' );
+function mw_enqueue_color_picker( $hook_suffix ) {
+    // first check that $hook_suffix is appropriate for your admin page
+    wp_enqueue_style( 'wp-color-picker' );
+    wp_enqueue_script( 'my-script-handle', plugins_url('my-script.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
+}*/
 
 function load_plugin_languages()
 {
