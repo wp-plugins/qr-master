@@ -3,8 +3,8 @@ Contributors: studi7
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=F4VJKZW7THJ22
 Tags: mobile, qr code, shortcode, qr
 Requires at least: 3.5.1
-Tested up to: 3.5.1
-Stable tag: 1.0.4
+Tested up to: 4.1.1
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,7 @@ All QR codes are generated in live. The Php QR Code API save some data in cache,
 * English
 * Català
 * Español
+* Serbian (thanks to Ogi Djuraskovic - [First Site Guide](http://www.firstsiteguide.com/ "firstsiteguide.com"))
 
 = TO-DO =
 
@@ -65,6 +66,9 @@ Yes, with Php QR API each QR code is saved in 'upload/qrmaster/cache'. When size
 4. Example of generated QR code
 
 == Changelog ==
+
+= 1.0.5 =
+* Include Serbian Language (thanks to Ogi Djuraskovic - [First Site Guide](http://www.firstsiteguide.com/ "firstsiteguide.com"))
 
 = 1.0.4 =
 * Colored QR codes with Php QR Code

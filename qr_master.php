@@ -4,7 +4,7 @@ Plugin Name: QR Master
 Description: Generation shortcodes to include QR codes to posts and pages
 Author: Roger Pàmies
 Author URI: http://studi7.com/
-Version: 1.0.4
+Version: 1.0.5
 License: GPLv2 or later
 Plugin URI: http://studi7.com/codi/plugin-wordpress-qr-master/
 */
